@@ -56,6 +56,7 @@ int main ()
 	cout << "\rFLOPS (sequential): " << 1000 * real_t(N) / nms1 << "." << endl;
 	cout << "FLOPS (parallel):   " << 1000 * real_t(N) / nms2 << "." << endl;
 	cout << "OPENMP SPEEDUP:     " << (nms2 == 0 ? 1 : real_t(nms1) / nms2) << "." << endl;
+	cout << "omp_get_num_procs() returns " << omp_get_num_procs() << "." << endl;
 	return EXIT_SUCCESS;
 }
 
