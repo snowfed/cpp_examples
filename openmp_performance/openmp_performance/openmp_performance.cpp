@@ -19,7 +19,7 @@ using std::size_t;
 
 typedef double real_t;
 
-const size_t nops0 = 5e7; // initial number of operations
+const size_t nops0 = 50000000; // initial number of operations
 const size_t nms_stop = 10000; // max execution time in ms
 
 real_t arithm_op_bulk (real_t input, size_t N, bool use_openmp);
@@ -28,7 +28,7 @@ int main ()
 {
 	const size_t multiplier = 2;
 	const size_t maxN = std::numeric_limits<size_t>::max() / multiplier;
-	size_t nms1 = 0, nms2 = 1;
+	double nms1 = 0, nms2 = 1;
 	size_t N = 0;
 	real_t val1 = 0, val2 = 0;
 	for (N = nops0; N < maxN; N *= 2) {
@@ -73,15 +73,15 @@ real_t arithm_op_bulk_helper (real_t value, size_t N)
 
 real_t arithm_op_bulk (real_t input, size_t N, bool use_openmp)
 {
-	size_t nprocs =	omp_get_num_procs();
+	int nprocs = omp_get_num_procs();
 	size_t K = N / nprocs;
 	real_t total = 0;
 	if (use_openmp) {
 #pragma omp parallel for reduction(+:total)
-		for (size_t ithread = 0; ithread < nprocs; ++ithread)
+		for (int ithread = 0; ithread < nprocs; ++ithread)
 			total += arithm_op_bulk_helper(input+ithread, K);
 	} else {
-		for (size_t ithread = 0; ithread < nprocs; ++ithread)
+		for (int ithread = 0; ithread < nprocs; ++ithread)
 			total += arithm_op_bulk_helper(input+ithread, K);
 	}
 	return total;
