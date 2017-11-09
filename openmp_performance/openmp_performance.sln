@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "openmp_performance", "openmp_performance\openmp_performance.vcxproj", "{2401AED0-B206-45C1-8B5D-279B4CE9A842}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "openmp_threads", "..\openmp_threads\openmp_threads\openmp_threads.vcxproj", "{3ABBB8E0-9862-4BBC-B99A-61AB3F6E3588}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +23,19 @@ Global
 		{2401AED0-B206-45C1-8B5D-279B4CE9A842}.Release|x64.Build.0 = Release|x64
 		{2401AED0-B206-45C1-8B5D-279B4CE9A842}.Release|x86.ActiveCfg = Release|Win32
 		{2401AED0-B206-45C1-8B5D-279B4CE9A842}.Release|x86.Build.0 = Release|Win32
+		{3ABBB8E0-9862-4BBC-B99A-61AB3F6E3588}.Debug|x64.ActiveCfg = Debug|x64
+		{3ABBB8E0-9862-4BBC-B99A-61AB3F6E3588}.Debug|x64.Build.0 = Debug|x64
+		{3ABBB8E0-9862-4BBC-B99A-61AB3F6E3588}.Debug|x86.ActiveCfg = Debug|Win32
+		{3ABBB8E0-9862-4BBC-B99A-61AB3F6E3588}.Debug|x86.Build.0 = Debug|Win32
+		{3ABBB8E0-9862-4BBC-B99A-61AB3F6E3588}.Release|x64.ActiveCfg = Release|x64
+		{3ABBB8E0-9862-4BBC-B99A-61AB3F6E3588}.Release|x64.Build.0 = Release|x64
+		{3ABBB8E0-9862-4BBC-B99A-61AB3F6E3588}.Release|x86.ActiveCfg = Release|Win32
+		{3ABBB8E0-9862-4BBC-B99A-61AB3F6E3588}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {831FD227-9E36-42A4-A901-1913422BF481}
 	EndGlobalSection
 EndGlobal
